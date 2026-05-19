@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - RecoveryAI</title>
+    <title>Legal & Compliance Center - RecoveryAI</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Lucide Icons (CDN) -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
@@ -22,6 +22,7 @@
                         brand: {
                             50: '#f0fdf4',
                             100: '#dcfce7',
+                            200: '#bbf7d0',
                             500: '#22c55e',
                             600: '#16a34a',
                             700: '#15803d',
@@ -33,7 +34,7 @@
         }
     </script>
     <style>
-        /* Print Stylesheet integration */
+        /* Print Stylesheet Integration */
         @media print {
             body {
                 background: white !important;
@@ -76,16 +77,28 @@
 
     <!-- Sticky Header Navigation -->
     <header class="no-print sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <!-- Logo -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-2 shrink-0">
                 <div class="w-9 h-9 bg-gradient-to-tr from-brand-600 to-emerald-400 rounded-lg flex items-center justify-center text-white shadow-md shadow-brand-500/20">
                     <i data-lucide="shield-check" class="w-5 h-5"></i>
                 </div>
                 <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">Recovery<span class="text-brand-600 dark:text-brand-500">AI</span></span>
             </div>
+
+            <!-- Global Document Tabs Switcher -->
+            <div class="bg-slate-100 dark:bg-slate-850 p-1 rounded-xl flex items-center border border-slate-200 dark:border-slate-700/50 shadow-sm shrink-0">
+                <button id="tab-btn-privacy" onclick="switchDocument('privacy')" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-1.5 bg-white dark:bg-slate-800 text-brand-700 dark:text-white shadow-sm">
+                    <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+                    <span>Privacy Policy</span>
+                </button>
+                <button id="tab-btn-terms" onclick="switchDocument('terms')" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-1.5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">
+                    <i data-lucide="file-signature" class="w-3.5 h-3.5"></i>
+                    <span>Terms & Conditions</span>
+                </button>
+            </div>
             
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2">
                 <!-- Theme Toggle Button -->
                 <button id="theme-toggle" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-slate-600 dark:text-slate-400" aria-label="Toggle Theme">
                     <i id="theme-icon" data-lucide="moon" class="w-5 h-5"></i>
@@ -93,32 +106,27 @@
                 <!-- Print Button -->
                 <button onclick="window.print()" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-slate-600 dark:text-slate-400 flex items-center gap-2" title="Print Document">
                     <i data-lucide="printer" class="w-5 h-5"></i>
-                    <span class="hidden sm:inline text-sm font-medium">Print</span>
+                    <span class="hidden md:inline text-sm font-medium">Print</span>
                 </button>
-                <!-- Main Site Link -->
-                <a href="https://recoveryai-site.vercel.app/" target="_blank" class="no-print bg-slate-950 dark:bg-white text-white dark:text-slate-950 hover:bg-brand-600 dark:hover:bg-brand-500 hover:text-white dark:hover:text-white transition-all text-sm font-semibold px-4 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
-                    <span>Visit Site</span>
-                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero / Header block -->
-    <div class="relative overflow-hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-12 md:py-20 transition-colors duration-300">
+    <!-- Hero Header Banner -->
+    <div class="relative overflow-hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-10 md:py-16 transition-colors duration-300">
         <!-- Abstract background elements -->
         <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-800/50 text-brand-700 dark:text-brand-400 text-xs font-semibold uppercase tracking-wider mb-6">
+            <div id="hero-badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-800/50 text-brand-700 dark:text-brand-400 text-xs font-semibold uppercase tracking-wider mb-4">
                 <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-                Scope: Platform & Messaging Users
+                <span id="badge-text">Privacy Policy • Platform & Messaging</span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6">
+            <h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
                 Privacy Policy
             </h1>
-            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8">
+            <p id="hero-description" class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-6">
                 Learn how RecoveryAI collects, uses, and safeguards information when operating automated messaging, customer support, and booking coordination services.
             </p>
             <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-slate-500 dark:text-slate-400">
@@ -144,7 +152,7 @@
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
                         <i data-lucide="search" class="w-4 h-4"></i>
                     </div>
-                    <input type="text" id="policy-search" placeholder="Search key phrases (e.g., 'STOP', 'opt-out')..." 
+                    <input type="text" id="policy-search" placeholder="Search keys (e.g., 'STOP', 'consent', 'liability')..." 
                         class="w-full pl-9 pr-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-sm text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
                     <button id="search-clear" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
                         <i data-lucide="x" class="w-4 h-4"></i>
@@ -152,12 +160,13 @@
                 </div>
                 <!-- Mini helper tools -->
                 <div class="flex flex-wrap items-center gap-2">
-                    <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Quick actions:</span>
-                    <button onclick="scrollToElement('sms-compliance')" class="px-3 py-1.5 bg-brand-50 dark:bg-brand-950 hover:bg-brand-100 dark:hover:bg-brand-900/50 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-400 rounded-md text-xs font-semibold transition-all">
-                        SMS Rules
+                    <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Jump To Compliance:</span>
+                    <button onclick="scrollToElement('sms-compliance-box')" class="px-3 py-1.5 bg-brand-50 dark:bg-brand-950 hover:bg-brand-100 dark:hover:bg-brand-900/50 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-400 rounded-md text-xs font-semibold transition-all flex items-center gap-1">
+                        <i data-lucide="message-square-text" class="w-3.5 h-3.5"></i>
+                        SMS Compliance
                     </button>
                     <button onclick="scrollToElement('contact')" class="px-3 py-1.5 bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 rounded-md text-xs font-semibold transition-all">
-                        Contact Opt-Out
+                        Opt-Out Help
                     </button>
                 </div>
             </div>
@@ -168,7 +177,7 @@
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             
-            <!-- Sticky Sidebar Menu (Table of Contents) -->
+            <!-- Sticky Sidebar Menu (Dynamic Table of Contents) -->
             <aside class="no-print hidden lg:block lg:col-span-1">
                 <div class="sticky top-40 space-y-4">
                     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 transition-colors duration-300 shadow-sm">
@@ -176,17 +185,9 @@
                             <i data-lucide="menu" class="w-3.5 h-3.5"></i>
                             Table of Contents
                         </h3>
+                        <!-- Navigation populated by JS based on current tab -->
                         <nav class="space-y-1" id="toc-nav">
-                            <a href="#overview" class="toc-link block px-3 py-2 text-sm font-medium rounded-lg text-brand-600 dark:text-brand-500 bg-brand-50/50 dark:bg-brand-950/50 transition-all">1. Overview</a>
-                            <a href="#info-we-collect" class="toc-link block px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">2. Information We Collect</a>
-                            <a href="#how-we-use-info" class="toc-link block px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">3. How We Use Information</a>
-                            <a href="#sms-communications" class="toc-link block px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">4. SMS Communications</a>
-                            <a href="#data-sharing" class="toc-link block px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">5. Data Sharing & Third-Party</a>
-                            <a href="#data-security" class="toc-link block px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">6. Data Security</a>
-                            <a href="#data-retention" class="toc-link block px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">7. Data Retention</a>
-                            <a href="#user-rights" class="toc-link block px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">8. User Rights</a>
-                            <a href="#policy-changes" class="toc-link block px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">9. Policy Changes</a>
-                            <a href="#contact" class="toc-link block px-3 py-2 text-sm font-medium rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all">10. Contact Information</a>
+                            <!-- Injected Dynamically by switchDocument() -->
                         </nav>
                     </div>
 
@@ -194,7 +195,7 @@
                     <div class="bg-gradient-to-tr from-brand-900/10 to-emerald-900/5 border border-brand-200/50 dark:border-brand-800/40 rounded-xl p-5 text-center transition-colors duration-300">
                         <i data-lucide="help-circle" class="w-8 h-8 mx-auto text-brand-500 mb-2"></i>
                         <h4 class="text-xs font-bold text-slate-900 dark:text-white mb-1">Need Clarification?</h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 leading-relaxed">Have questions about the platform data workflows?</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-3 leading-relaxed">Have questions about our service clauses or data rules?</p>
                         <a href="mailto:getrecoveryai@gmail.com" class="inline-flex items-center gap-1 bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold px-3 py-1.5 rounded-md transition-all">
                             <span>Email Support</span>
                         </a>
@@ -205,380 +206,427 @@
             <!-- Main Content Area -->
             <div class="col-span-1 lg:col-span-3 space-y-12 print-full-width">
 
-                <!-- 1. Overview -->
-                <section id="overview" class="scroll-mt-36 print-border">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">1</span>
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Overview</h2>
-                    </div>
-                    <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
-                        <p>
-                            At RecoveryAI, we value your privacy and trust. RecoveryAI provides AI-powered conversational SMS communication, missed-call recovery, lead capture, customer follow-up, booking coordination, and customer support communication tools designed for SMB (Small and Medium-sized Businesses) partners.
+                <!-- ----------------- PRIVACY POLICY VIEW CONTAINER ----------------- -->
+                <div id="privacy-document" class="space-y-12">
+                    <!-- 1. Overview -->
+                    <section id="p-overview" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">1</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Overview</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
+                            <p>
+                                At RecoveryAI, we value your privacy and trust. RecoveryAI provides AI-powered conversational SMS communication, missed-call recovery, lead capture, customer follow-up, booking coordination, and customer support communication tools designed for SMB (Small and Medium-sized Businesses) partners.
+                            </p>
+                            <p>
+                                Our platform helps businesses respond faster to customers, recover missed opportunities, improve communication workflows, and provide streamlined customer support through direct phone and SMS interactions.
+                            </p>
+                            <p>
+                                This Privacy Policy explains how we collect, store, use, and protect your information.
+                            </p>
+                        </div>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 2. Information We Collect -->
+                    <section id="p-info-we-collect" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">2</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Information We Collect</h2>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                            To provide our communication and workflow services effectively, we may collect the following information:
                         </p>
-                        <p>
-                            Our platform helps businesses respond faster to customers, recover missed opportunities, improve communication workflows, and provide streamlined customer support through direct phone and SMS interactions.
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
+                                <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
+                                    <i data-lucide="user" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">Contact Data</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Name, phone number, and related customer contact details.</p>
+                                </div>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
+                                <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
+                                    <i data-lucide="message-square" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">SMS Message Content</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Full historical log of conversation content exchanged through the platform.</p>
+                                </div>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
+                                <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
+                                    <i data-lucide="phone-call" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">Call Metadata</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Missed call timestamps, caller numbers, and associated connection records.</p>
+                                </div>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
+                                <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
+                                    <i data-lucide="calendar-days" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">Service Request Details</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Information related directly to booking requests, business inquiries, and support logs.</p>
+                                </div>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
+                                <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
+                                    <i data-lucide="settings-2" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">Preferences</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Scheduling preferences, specific service booking dates, and notification flags.</p>
+                                </div>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
+                                <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
+                                    <i data-lucide="building-2" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">Business Settings</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Internal message dispatch rules, team permissions, and workflow configurations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 3. How We Use Information -->
+                    <section id="p-how-we-use-info" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">3</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">How We Use Information</h2>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                            The information we collect is utilized strictly to secure, improve, analyze, and operate the RecoveryAI ecosystem, specifically to:
                         </p>
-                        <p>
-                            This Privacy Policy explains how we collect, store, use, and protect your information.
-                        </p>
-                    </div>
-                </section>
-
-                <hr class="border-slate-200 dark:border-slate-800 no-print" />
-
-                <!-- 2. Information We Collect -->
-                <section id="info-we-collect" class="scroll-mt-36 print-border">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">2</span>
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Information We Collect</h2>
-                    </div>
-                    <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                        To provide our communication and workflow services effectively, we may collect the following information:
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- Card: Contact Data -->
-                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
-                            <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
-                                <i data-lucide="user" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-900 dark:text-white text-sm">Contact Data</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Name, phone number, and related customer contact details.</p>
-                            </div>
-                        </div>
-                        <!-- Card: SMS Message Content -->
-                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
-                            <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
-                                <i data-lucide="message-square" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-900 dark:text-white text-sm">SMS Message Content</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Full historical log of conversation content exchanged through the platform.</p>
-                            </div>
-                        </div>
-                        <!-- Card: Call Metadata -->
-                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
-                            <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
-                                <i data-lucide="phone-call" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-900 dark:text-white text-sm">Call Metadata</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Missed call timestamps, caller numbers, and associated connection records.</p>
-                            </div>
-                        </div>
-                        <!-- Card: Service Request Details -->
-                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
-                            <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
-                                <i data-lucide="calendar-days" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-900 dark:text-white text-sm">Service Request Details</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Information related directly to booking requests, business inquiries, and support logs.</p>
-                            </div>
-                        </div>
-                        <!-- Card: Preferences -->
-                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
-                            <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
-                                <i data-lucide="settings-2" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-900 dark:text-white text-sm">Preferences</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Scheduling preferences, specific service booking dates, and notification flags.</p>
-                            </div>
-                        </div>
-                        <!-- Card: Business Configuration Data -->
-                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all">
-                            <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
-                                <i data-lucide="building-2" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-900 dark:text-white text-sm">Business Settings</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Internal message dispatch rules, team permissions, and workflow configurations.</p>
-                            </div>
-                        </div>
-                        <!-- Card: Device & Website Info -->
-                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl flex items-start gap-3 transition-all md:col-span-2">
-                            <div class="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-brand-500">
-                                <i data-lucide="monitor" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-900 dark:text-white text-sm">Website & Device Information</h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Browser type, device classification, IP addresses, and anonymous analytical interactions with our landing properties.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <hr class="border-slate-200 dark:border-slate-800 no-print" />
-
-                <!-- 3. How We Use Information -->
-                <section id="how-we-use-info" class="scroll-mt-36 print-border">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">3</span>
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">How We Use Information</h2>
-                    </div>
-                    <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                        The information we collect is utilized strictly to secure, improve, analyze, and operate the RecoveryAI ecosystem. Specifically, we process this details to:
-                    </p>
-                    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden transition-colors duration-300 shadow-sm">
-                        <ul class="divide-y divide-slate-100 dark:divide-slate-800">
-                            <li class="p-4 flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0"></i>
-                                <span>Respond instantly to customer queries on behalf of our client SMBs.</span>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="p-3 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-lg flex items-center gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0"></i>
+                                <span>Respond instantly to customer queries.</span>
                             </li>
-                            <li class="p-4 flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0"></i>
-                                <span>Transmit AI conversational follow-up messages automatically.</span>
+                            <li class="p-3 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-lg flex items-center gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0"></i>
+                                <span>Transmit automated follow-up messages.</span>
                             </li>
-                            <li class="p-4 flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0"></i>
-                                <span>Actively recover missed-call opportunities to re-engage potential leads.</span>
+                            <li class="p-3 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-lg flex items-center gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0"></i>
+                                <span>Actively recover missed-call opportunities.</span>
                             </li>
-                            <li class="p-4 flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0"></i>
-                                <span>Coordinate calendars, service schedules, and real-time business appointment pipelines.</span>
-                            </li>
-                            <li class="p-4 flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0"></i>
-                                <span>Deliver functional, reliable, and secure end-user client support.</span>
-                            </li>
-                            <li class="p-4 flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0"></i>
-                                <span>Enhance overall platform reliability, architectural speed, and digital safeguards.</span>
-                            </li>
-                            <li class="p-4 flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0"></i>
-                                <span>Identify, block, and prevent fraudulent activity, system spam, or workspace misuse.</span>
-                            </li>
-                            <li class="p-4 flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500 shrink-0"></i>
-                                <span>Maintain overall service operational performance metrics and reporting data dashboards.</span>
+                            <li class="p-3 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-lg flex items-center gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500 shrink-0"></i>
+                                <span>Coordinate calendar booking pipelines.</span>
                             </li>
                         </ul>
-                    </div>
-                </section>
+                    </section>
 
-                <hr class="border-slate-200 dark:border-slate-800 no-print" />
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
 
-                <!-- 4. SMS Communications -->
-                <section id="sms-communications" class="scroll-mt-36 print-border">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">4</span>
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">SMS Communications</h2>
-                    </div>
-                    
-                    <div class="bg-slate-100 dark:bg-slate-900/50 rounded-xl p-5 border border-slate-200 dark:border-slate-800 mb-6 transition-all">
-                        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
-                            By submitting an inquiry form, requesting more details, scheduling online appointments, dialing directly or texting the phone number of a business utilizing RecoveryAI, you consent to receive related automated SMS communications from that business through our software platform.
+                    <!-- 4. SMS Communications -->
+                    <section id="p-sms-communications" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">4</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">SMS Communications</h2>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            By submitting a website form, requesting information, booking services, or contacting a business directly by phone/SMS using RecoveryAI, you consent to receive related automated SMS communications.
                         </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Message Frequency -->
-                        <div class="border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 rounded-xl transition-all">
-                            <div class="w-10 h-10 bg-brand-50 dark:bg-brand-950/50 text-brand-500 rounded-lg flex items-center justify-center mb-4">
-                                <i data-lucide="activity" class="w-5 h-5"></i>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl">
+                                <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Message Frequency</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Varies based on user activity and specific coordination requirements.</p>
                             </div>
-                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">Message Frequency</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Transmissions frequency directly corresponds to user activity, query status, or specific custom service operations requested.
+                            <div class="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl">
+                                <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Rates & Transfers</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Standard message and data rates may apply depending on your provider.</p>
+                            </div>
+                            <div class="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl">
+                                <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Standard Opt-Out</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Text <strong>STOP</strong> at any time to opt-out. Text <strong>HELP</strong> for guidance.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 5. Data Sharing & Third-Party Restrictions -->
+                    <section id="p-data-sharing" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">5</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Data Sharing & Third-Party</h2>
+                        </div>
+                        
+                        <!-- SMS compliance highlighted box -->
+                        <div id="sms-compliance-box" class="bg-gradient-to-r from-emerald-600/10 to-brand-600/10 border-2 border-brand-500/30 rounded-2xl p-6 mb-6 transition-all">
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-brand-500/20 rounded-xl text-brand-600 dark:text-brand-400 shrink-0">
+                                    <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-base sm:text-lg font-bold text-brand-900 dark:text-brand-400 mb-2">Strict SMS Compliance Statement</h3>
+                                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-semibold">
+                                        No mobile phone numbers, SMS opt-in consent records, or consumer personal information will be shared, sold, rented, or disclosed to third parties or affiliates for marketing, promotional, or advertising purposes under any circumstances.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            Information sharing is permitted strictly with intended business providers (SMBs), essential tech vendors (cloud hosts, text dispatch lines), or legal mandates.
+                        </p>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 6. Data Security -->
+                    <section id="p-data-security" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">6</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Data Security</h2>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                            RecoveryAI employs modern, industry-standard administrative, physical, and digital cybersecurity guidelines to avoid data intercept, unauthorized entry, physical theft, loss, or alteration.
+                        </p>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 7. Data Retention -->
+                    <section id="p-data-retention" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">7</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Data Retention</h2>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                            We limit retention of private data files strictly to timescales required for providing services, complying with law guidelines, resolving platform disputes, and enforcing platform service policies.
+                        </p>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 8. User Rights -->
+                    <section id="p-user-rights" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">8</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">User Rights</h2>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            Users maintain explicit individual rights to request access to view personal files, request corrections, request permanent database deletions, or instantly opt-out of campaigns.
+                        </p>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 9. Policy Changes -->
+                    <section id="p-policy-changes" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">9</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Changes to This Privacy Policy</h2>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                            We reserve the right to periodically refresh or expand guidelines within this Privacy Policy. When updates occur, we modify the <strong>Last Updated</strong> date at the top of the resource.
+                        </p>
+                    </section>
+                </div>
+
+
+                <!-- ----------------- TERMS & CONDITIONS VIEW CONTAINER ----------------- -->
+                <div id="terms-document" class="space-y-12 hidden">
+                    <!-- 1. Overview -->
+                    <section id="t-overview" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">1</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Overview</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
+                            <p>
+                                RecoveryAI provides AI-powered conversational SMS communication, missed-call recovery, lead capture, booking coordination, customer follow-up, and customer communication tools for SMB businesses.
+                            </p>
+                            <div class="bg-amber-50 dark:bg-amber-950/20 border-l-4 border-amber-500 p-4 rounded-r-xl my-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                <strong>Agreement of Terms:</strong> By submitting a website form, requesting information, booking services, contacting a business directly by phone or SMS, or otherwise initiating communication with a business using the RecoveryAI platform, you agree to these Terms & Conditions.
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 2. SMS Communications -->
+                    <section id="t-sms-communications" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">2</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">SMS Communications</h2>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                            RecoveryAI facilitates conversational SMS communications between businesses and their customers. Supported message scopes include:
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4 text-sm text-slate-600 dark:text-slate-300">
+                            <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center gap-2">
+                                <i data-lucide="headset" class="w-4 h-4 text-brand-500 shrink-0"></i>
+                                <span>Customer Support Communication</span>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-4 h-4 text-brand-500 shrink-0"></i>
+                                <span>Appointment Coordination</span>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center gap-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-brand-500 shrink-0"></i>
+                                <span>Booking & Missed-Call Follow-ups</span>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500 shrink-0"></i>
+                                <span>Service & Inquiry Responses</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 italic">
+                            RecoveryAI strictly limits operations to conversational or operational messages related to active consumer interactions.
+                        </p>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 3. Consent to Receive Messages -->
+                    <section id="t-consent" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">3</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Consent to Receive Messages</h2>
+                        </div>
+                        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
+                            <p>
+                                By providing your mobile phone number through a website form, booking request, customer inquiry, direct phone call, SMS interaction, or other communication method, you consent to receive SMS communications related to your interaction with the business.
+                            </p>
+                            <p class="font-bold text-brand-600 dark:text-brand-400 flex items-center gap-2 text-sm sm:text-base">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                Consent to receive SMS messages is not a condition of purchase.
                             </p>
                         </div>
-                        <!-- Rates and Costs -->
-                        <div class="border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 rounded-xl transition-all">
-                            <div class="w-10 h-10 bg-brand-50 dark:bg-brand-950/50 text-brand-500 rounded-lg flex items-center justify-center mb-4">
-                                <i data-lucide="coins" class="w-5 h-5"></i>
-                            </div>
-                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">Message & Data Rates</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Depending entirely on standard service agreement clauses set by your specific cellular carrier, standard text or transfer data rates may apply.
-                            </p>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 4. Message Frequency, Rates & Opt-Out -->
+                    <section id="t-rules" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">4</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Frequencies, Carrier Rates, & Opt-Outs</h2>
                         </div>
-                        <!-- Opt-Out Action -->
-                        <div class="border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 rounded-xl transition-all">
-                            <div class="w-10 h-10 bg-brand-50 dark:bg-brand-950/50 text-brand-500 rounded-lg flex items-center justify-center mb-4">
-                                <i data-lucide="ban" class="w-5 h-5"></i>
+                        
+                        <div class="space-y-6">
+                            <!-- Detail grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl">
+                                    <h3 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Message Frequency</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Message frequency varies depending on customer interaction and active business communication needs.</p>
+                                </div>
+                                <div class="p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl">
+                                    <h3 class="font-bold text-slate-900 dark:text-white text-sm mb-1">Carrier Charges</h3>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Message and data rates may apply based on your wireless carrier plan details.</p>
+                                </div>
                             </div>
-                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">Opt-Out & Help</h3>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Text the keyword <strong class="text-slate-800 dark:text-slate-200">STOP</strong> to immediately drop any communication sequence, or <strong class="text-slate-800 dark:text-slate-200">HELP</strong> for immediate guidance.
-                            </p>
-                        </div>
-                    </div>
-                </section>
 
-                <hr class="border-slate-200 dark:border-slate-800 no-print" />
-
-                <!-- 5. Data Sharing & Third-Party Restrictions -->
-                <section id="data-sharing" class="scroll-mt-36 print-border">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">5</span>
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Data Sharing & Third-Party</h2>
-                    </div>
-                    <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                        At RecoveryAI, user data absolute confidentiality is protected. Under no standard operation do we offer, broker, lease, or distribute private customer lists for marketing actions.
-                    </p>
-
-                    <!-- Core Highlight: Strict SMS Compliance -->
-                    <div id="sms-compliance" class="bg-gradient-to-r from-emerald-600/10 to-brand-600/10 border-2 border-brand-500/30 rounded-2xl p-6 mb-8 transition-all">
-                        <div class="flex items-start gap-4">
-                            <div class="p-3 bg-brand-500/20 rounded-xl text-brand-600 dark:text-brand-400 shrink-0">
-                                <i data-lucide="shield-alert" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-brand-900 dark:text-brand-400 mb-2">Strict SMS Compliance Statement</h3>
-                                <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-semibold">
-                                    No mobile phone numbers, SMS opt-in consent records, or consumer personal information will be shared, sold, rented, or disclosed to third parties or affiliates for marketing, promotional, or advertising purposes under any circumstances.
+                            <!-- Opt-Out Command Showcase -->
+                            <div class="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-2xl">
+                                <h3 class="font-bold text-slate-900 dark:text-white text-sm mb-3 flex items-center gap-2">
+                                    <i data-lucide="ban" class="w-4 h-4 text-brand-500"></i>
+                                    Industry Standard Opt-Out Codes
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">
+                                    You may opt out of SMS communications at any time by replying with any of the following keyword commands:
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-900/50 text-red-700 dark:text-red-400 font-extrabold text-xs rounded-md shadow-sm">STOP</span>
+                                    <span class="px-3 py-1 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-900/50 text-red-700 dark:text-red-400 font-extrabold text-xs rounded-md shadow-sm">CANCEL</span>
+                                    <span class="px-3 py-1 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-900/50 text-red-700 dark:text-red-400 font-extrabold text-xs rounded-md shadow-sm">END</span>
+                                    <span class="px-3 py-1 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-900/50 text-red-700 dark:text-red-400 font-extrabold text-xs rounded-md shadow-sm">UNSUBSCRIBE</span>
+                                    <span class="px-3 py-1 bg-red-100 dark:bg-red-950/40 border border-red-300 dark:border-red-900/50 text-red-700 dark:text-red-400 font-extrabold text-xs rounded-md shadow-sm">QUIT</span>
+                                </div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-4 italic">
+                                    After opting out, you will no longer receive SMS communications unless you re-initiate contact or provide renewed consent.
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 font-bold uppercase tracking-wider">Permitted Core Infrastructure Outflows:</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl">
-                            <h4 class="font-semibold text-slate-900 dark:text-white text-sm flex items-center gap-1.5 mb-2">
-                                <i data-lucide="store" class="w-4 h-4 text-brand-500"></i>
-                                Intended Business
-                            </h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                                The original small or local SMB business entity that the customer explicitly initiated interaction with.
-                            </p>
-                        </div>
-                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl">
-                            <h4 class="font-semibold text-slate-900 dark:text-white text-sm flex items-center gap-1.5 mb-2">
-                                <i data-lucide="server" class="w-4 h-4 text-brand-500"></i>
-                                Core Vendors
-                            </h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                                Essential technology providers, cloud database operators, and messaging bridges required to execute core program activities.
-                            </p>
-                        </div>
-                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 rounded-xl">
-                            <h4 class="font-semibold text-slate-900 dark:text-white text-sm flex items-center gap-1.5 mb-2">
-                                <i data-lucide="gavel" class="w-4 h-4 text-brand-500"></i>
-                                Legal Mandates
-                            </h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                                Instances requiring compliance with court orders, regulatory subpoenas, valid judicial requests, or legal regulations.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
 
-                <hr class="border-slate-200 dark:border-slate-800 no-print" />
-
-                <!-- 6. Data Security -->
-                <section id="data-security" class="scroll-mt-36 print-border">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">6</span>
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Data Security</h2>
-                    </div>
-                    <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
-                        <p>
-                            RecoveryAI employs modern, industry-standard administrative, physical, and digital cybersecurity guidelines to avoid data intercept, unauthorized entry, physical theft, loss, or alteration.
+                    <!-- 5. User Responsibilities -->
+                    <section id="t-responsibilities" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">5</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">User Responsibilities</h2>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                            To protect service stability, platform performance, and visual communication frameworks, users agree not to:
                         </p>
-                        <p class="text-sm bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/50 p-3 rounded-lg text-amber-800 dark:text-amber-400">
-                            <strong>Note:</strong> While we employ strict protection frameworks, please be aware that no data storage solution, web server, or routing hub operating on the public Internet is capable of guaranteed 100% impenetrability.
+                        <ul class="space-y-3.5 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Use the RecoveryAI platform or integrated SMB communication channels for unlawful activities.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Attempt unauthorized access to our legal systems, servers, logs, or external communications.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Abuse, spam, or transmit malicious, automated text sequences.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                                <span>Violate applicable local, state, or federal laws (including TCPA and CAN-SPAM acts).</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 6. Service Availability & Limits -->
+                    <section id="t-availability" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">6</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Service Availability & Liability Limits</h2>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-xl">
+                                <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2">Service Availability Statement</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    RecoveryAI strives to maintain reliable service availability but does not guarantee uninterrupted or error-free service at all times. Temporary outages, maintenance schedules, or technical transmission interruptions outside our immediate network control may occur.
+                                </p>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 rounded-xl">
+                                <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2">Limitation of Liability</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    RecoveryAI shall not be liable for indirect, incidental, special, consequential, or punitive damages resulting from the use or inability to use the platform.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="border-slate-200 dark:border-slate-800 no-print" />
+
+                    <!-- 7. Changes to Terms -->
+                    <section id="t-changes" class="scroll-mt-36 print-border">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">7</span>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Changes to Terms</h2>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                            RecoveryAI may update these Terms & Conditions periodically. Updated versions will be posted on this page with a revised effective date. We encourage users to verify these segments at ongoing intervals.
                         </p>
-                    </div>
-                </section>
+                    </section>
+                </div>
 
-                <hr class="border-slate-200 dark:border-slate-800 no-print" />
 
-                <!-- 7. Data Retention -->
-                <section id="data-retention" class="scroll-mt-36 print-border">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">7</span>
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Data Retention</h2>
-                    </div>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                        We limit retention of private data files strictly to timescales required for:
-                    </p>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                        <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold rounded-lg text-slate-700 dark:text-slate-300">
-                            Providing software services
-                        </div>
-                        <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold rounded-lg text-slate-700 dark:text-slate-300">
-                            Complying with law guidelines
-                        </div>
-                        <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold rounded-lg text-slate-700 dark:text-slate-300">
-                            Resolving platform disputes
-                        </div>
-                        <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold rounded-lg text-slate-700 dark:text-slate-300">
-                            Maintaining activity records
-                        </div>
-                        <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold rounded-lg text-slate-700 dark:text-slate-300">
-                            Enhancing app efficiency
-                        </div>
-                        <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold rounded-lg text-slate-700 dark:text-slate-300">
-                            Enforcing service policies
-                        </div>
-                    </div>
-                </section>
-
-                <hr class="border-slate-200 dark:border-slate-800 no-print" />
-
-                <!-- 8. User Rights -->
-                <section id="user-rights" class="scroll-mt-36 print-border">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">8</span>
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">User Rights</h2>
-                    </div>
-                    <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                        Under local privacy acts or broader legal provisions, platform customers and users may maintain unique individual freedoms over personal details, including:
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex gap-3 items-start">
-                            <div class="w-5 h-5 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-[10px] mt-0.5 shrink-0">1</div>
-                            <span class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Request direct access to view exact personal files collected on you.</span>
-                        </div>
-                        <div class="flex gap-3 items-start">
-                            <div class="w-5 h-5 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-[10px] mt-0.5 shrink-0">2</div>
-                            <span class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Request full corrections to inaccurate, outdated, or broken pieces of information.</span>
-                        </div>
-                        <div class="flex gap-3 items-start">
-                            <div class="w-5 h-5 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-[10px] mt-0.5 shrink-0">3</div>
-                            <span class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Request immediate, permanent deletion of target personal items from active databases.</span>
-                        </div>
-                        <div class="flex gap-3 items-start">
-                            <div class="w-5 h-5 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-[10px] mt-0.5 shrink-0">4</div>
-                            <span class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Opt out of future SMS correspondence campaigns instantly via replying stop commands.</span>
-                        </div>
-                    </div>
-                    <div class="mt-6 p-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-xs flex items-center justify-between gap-4">
-                        <span class="text-slate-500 dark:text-slate-400 font-medium">To submit an official query or assert these user freedoms, send details to:</span>
-                        <button onclick="copyEmail()" class="text-brand-600 dark:text-brand-400 hover:underline font-bold shrink-0 flex items-center gap-1">
-                            <span>getrecoveryai@gmail.com</span>
-                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-                        </button>
-                    </div>
-                </section>
-
-                <hr class="border-slate-200 dark:border-slate-800 no-print" />
-
-                <!-- 9. Changes to This Privacy Policy -->
-                <section id="policy-changes" class="scroll-mt-36 print-border">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">9</span>
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Changes to This Privacy Policy</h2>
-                    </div>
-                    <div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
-                        <p>
-                            RecoveryAI reserve rights to periodically refresh, update, or expand guidelines within this Policy statement. 
-                        </p>
-                        <p>
-                            When updates occur, we'll mark adjustment schedules by altering the **Last Updated** date at the absolute top of this resource page. We highly encourage clients to stay alert to periodically review these sections.
-                        </p>
-                    </div>
-                </section>
-
-                <hr class="border-slate-200 dark:border-slate-800 no-print" />
-
-                <!-- 10. Contact Information -->
+                <!-- Unified Contact Block (Global to both views) -->
                 <section id="contact" class="scroll-mt-36 print-border pb-10">
                     <div class="flex items-center gap-3 mb-6">
-                        <span class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">10</span>
+                        <span id="contact-num" class="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center font-bold text-sm">10</span>
                         <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Contact Information</h2>
                     </div>
                     
@@ -589,7 +637,7 @@
                             <div>
                                 <h3 class="text-xl font-bold mb-2">Reach Out to RecoveryAI</h3>
                                 <p class="text-xs text-slate-400 leading-relaxed mb-6">
-                                    For any queries, comments, or data removal requests regarding this Privacy Policy, our engineering and compliance teams are here to support you.
+                                    For queries regarding this Privacy Policy, our Terms, opt-out rules, or technical integration clauses, please connect with us:
                                 </p>
                                 <div class="space-y-3">
                                     <div class="flex items-center gap-3">
@@ -608,7 +656,7 @@
                                             <i data-lucide="globe" class="w-4 h-4"></i>
                                         </div>
                                         <div class="text-xs">
-                                            <p class="text-slate-400 font-medium">Official Landing Page</p>
+                                            <p class="text-slate-400 font-medium">Official Website</p>
                                             <a href="https://recoveryai-site.vercel.app/" target="_blank" class="font-bold hover:underline hover:text-brand-400 transition-all">
                                                 recoveryai-site.vercel.app
                                             </a>
@@ -619,9 +667,9 @@
 
                             <div class="bg-white/5 border border-white/10 p-5 rounded-xl text-center">
                                 <i data-lucide="shield-check" class="w-12 h-12 text-brand-400 mx-auto mb-3"></i>
-                                <span class="text-xs text-slate-300 block mb-1">Guaranteed Trusted Data Processing</span>
-                                <h4 class="text-sm font-extrabold text-white">GDPR & SMS Compliance Met</h4>
-                                <p class="text-[10px] text-slate-400 mt-2">No sell-out policies on consumer personal contact strings guaranteed.</p>
+                                <span class="text-xs text-slate-300 block mb-1">Guaranteed Trusted Core Platforms</span>
+                                <h4 class="text-sm font-extrabold text-white">GDPR, TCPA & SMS Compliant</h4>
+                                <p class="text-[10px] text-slate-400 mt-2">No sell-out marketing policies on consumer personal listings guaranteed.</p>
                             </div>
                         </div>
                     </div>
@@ -631,10 +679,10 @@
         </div>
     </main>
 
-    <!-- Custom Toast Notification System (Replaces browser Alerts) -->
+    <!-- Custom Toast Notification System -->
     <div id="toast-container" class="no-print fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-    <!-- Footer -->
+    <!-- Global Footer -->
     <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300 py-8 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-2">
@@ -644,12 +692,12 @@
                 <span class="font-extrabold text-sm text-slate-900 dark:text-white">Recovery<span class="text-brand-600">AI</span></span>
             </div>
             <p class="text-xs text-slate-500 dark:text-slate-400 text-center md:text-left">
-                &copy; 2026 RecoveryAI. All rights reserved. Operating in structural platforms & messaging privacy guidelines.
+                &copy; 2026 RecoveryAI. All rights reserved. Platform messaging, privacy, and user agreement terms met.
             </p>
             <div class="no-print flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
                 <a href="https://recoveryai-site.vercel.app/" target="_blank" class="hover:underline hover:text-brand-500">Main Site</a>
                 <span>•</span>
-                <button onclick="scrollToElement('overview')" class="hover:underline hover:text-brand-500">Back to Top</button>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:underline hover:text-brand-500">Back to Top</button>
             </div>
         </div>
     </footer>
@@ -658,21 +706,111 @@
         // Init Lucide Icons
         lucide.createIcons();
 
-        // Target Section Map for ID search tagging
-        const sectionsList = [
-            { id: 'overview', title: '1. Overview', text: 'At RecoveryAI we value your privacy and trust. AI-powered conversational SMS communication missed-call recovery lead capture customer follow-up support designed for SMB' },
-            { id: 'info-we-collect', title: '2. Information We Collect', text: 'Contact Data SMS Message Content Call Metadata Service Request Details Preferences Business Configuration Data Website Device Information browser phone numbers timestamps scheduling' },
-            { id: 'how-we-use-info', title: '3. How We Use Information', text: 'operate improve secure platform inquiries conversational follow-up messages call opportunity coordinate appointment scheduling delivery support prevent fraud abuse reporting analytics' },
-            { id: 'sms-communications', title: '4. SMS Communications', text: 'website form requesting information booking services contacting business directly phone SMS consent conversational messaging frequency variations STOP HELP opt-out mobile carrier plan' },
-            { id: 'data-sharing', title: '5. Data Sharing & Third-Party', text: 'do not sell rent share personal information strict sms compliance statement mobile phone numbers records marketing promotional advertising intended business technology vendors cloud hosting servers subpoena judicial regulations' },
-            { id: 'data-security', title: '6. Data Security', text: 'industry-standard administrative technical physical safeguards protect personal information unauthorized access misuse disclosure modification destruction electronic storage internet secure' },
-            { id: 'data-retention', title: '7. Data Retention', text: 'retain information necessary provide services operational records comply legal obligations resolve disputes enforce platform policies' },
-            { id: 'user-rights', title: '8. User Rights', text: 'access personal information correct inaccurate data deletion opt out sms communications getrecoveryai@gmail.com' },
-            { id: 'policy-changes', title: '9. Changes to This Privacy Policy', text: 'update periodically revised version posted effective date' },
+        // Application State
+        let currentTab = 'privacy';
+
+        // Table of Contents definition arrays for the two documents
+        const privacyTOC = [
+            { id: 'p-overview', title: '1. Overview', text: 'At RecoveryAI we value your privacy and trust. AI-powered conversational SMS communication missed-call recovery lead capture customer follow-up support designed for SMB' },
+            { id: 'p-info-we-collect', title: '2. Information We Collect', text: 'Contact Data SMS Message Content Call Metadata Service Request Details Preferences Business Settings Website & Device Information phone numbers timestamps scheduling' },
+            { id: 'p-how-we-use-info', title: '3. How We Use Information', text: 'operate improve secure platform inquiries conversational follow-up messages call opportunity coordinate appointment scheduling delivery support prevent fraud abuse reporting analytics' },
+            { id: 'p-sms-communications', title: '4. SMS Communications', text: 'website form requesting information booking services contacting business directly phone SMS consent conversational messaging frequency variations STOP HELP opt-out mobile carrier plan' },
+            { id: 'p-data-sharing', title: '5. Data Sharing & Third-Party', text: 'do not sell rent share personal information strict sms compliance statement mobile phone numbers records marketing promotional advertising intended business technology vendors cloud hosting servers subpoena judicial regulations' },
+            { id: 'p-data-security', title: '6. Data Security', text: 'industry-standard administrative technical physical safeguards protect personal information unauthorized access misuse disclosure modification destruction electronic storage internet secure' },
+            { id: 'p-data-retention', title: '7. Data Retention', text: 'retain information necessary provide services operational records comply legal obligations resolve disputes enforce platform policies' },
+            { id: 'p-user-rights', title: '8. User Rights', text: 'access personal information correct inaccurate data deletion opt out sms communications getrecoveryai@gmail.com' },
+            { id: 'p-policy-changes', title: '9. Changes to Policy', text: 'update periodically revised version posted effective date' },
             { id: 'contact', title: '10. Contact Information', text: 'recoveryai getrecoveryai@gmail.com https://recoveryai-site.vercel.app/ verson website email support' }
         ];
 
-        // Search Engine & Visual Filtering
+        const termsTOC = [
+            { id: 't-overview', title: '1. Overview', text: 'agreement of terms provides AI-powered conversational SMS communication, missed-call recovery, lead capture, booking coordination, customer follow-up' },
+            { id: 't-sms-communications', title: '2. SMS Communications', text: 'facilitates conversational SMS communications customer support appointment coordination booking followups missed call inquiry responses' },
+            { id: 't-consent', title: '3. Consent to Receive', text: 'mobile phone number website form booking request customer inquiry phone call SMS interaction opt-in not a condition of purchase' },
+            { id: 't-rules', title: '4. Rates & Opt-Outs', text: 'frequency carrier charge mobile plan STOP CANCEL END UNSUBSCRIBE QUIT keyword command assistance help support' },
+            { id: 't-responsibilities', title: '5. Responsibilities', text: 'unlawful activities unauthorized access systems communications abuse spam spamming violate local state federal laws TCPA' },
+            { id: 't-availability', title: '6. Service Availability', text: 'uninterrupted error free outages maintenance liability limits indirect incidental special consequential punitive damages' },
+            { id: 't-changes', title: '7. Changes to Terms', text: 'update conditions periodically revised posted effective date' },
+            { id: 'contact', title: '8. Contact Information', text: 'recoveryai getrecoveryai@gmail.com https://recoveryai-site.vercel.app/ website email support' }
+        ];
+
+        // Navigation Generation and Document Router
+        function buildTOC() {
+            const container = document.getElementById('toc-nav');
+            container.innerHTML = '';
+            
+            const activeList = currentTab === 'privacy' ? privacyTOC : termsTOC;
+            
+            activeList.forEach((item, index) => {
+                const navLink = document.createElement('a');
+                navLink.href = `#${item.id}`;
+                navLink.className = `toc-link block px-3 py-2 text-sm font-medium rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50`;
+                navLink.textContent = item.title;
+                if (index === 0) {
+                    navLink.classList.add('text-brand-600', 'dark:text-brand-500', 'bg-brand-50/50', 'dark:bg-brand-950/50');
+                }
+                container.appendChild(navLink);
+            });
+        }
+
+        function switchDocument(tabName) {
+            currentTab = tabName;
+            
+            // UI elements
+            const privacyDoc = document.getElementById('privacy-document');
+            const termsDoc = document.getElementById('terms-document');
+            const privacyBtn = document.getElementById('tab-btn-privacy');
+            const termsBtn = document.getElementById('tab-btn-terms');
+            
+            const heroTitle = document.getElementById('hero-title');
+            const heroDesc = document.getElementById('hero-description');
+            const badgeText = document.getElementById('badge-text');
+            const contactNum = document.getElementById('contact-num');
+
+            // Reset search queries
+            document.getElementById('policy-search').value = '';
+            document.getElementById('search-clear').classList.add('hidden');
+
+            if (tabName === 'privacy') {
+                // Documents swap
+                privacyDoc.classList.remove('hidden');
+                termsDoc.classList.add('hidden');
+                
+                // Toggle Button Styling
+                privacyBtn.className = "px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-1.5 bg-white dark:bg-slate-800 text-brand-700 dark:text-white shadow-sm";
+                termsBtn.className = "px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-1.5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white";
+                
+                // Hero swap
+                heroTitle.textContent = "Privacy Policy";
+                heroDesc.textContent = "Learn how RecoveryAI collects, uses, and safeguards information when operating automated messaging, customer support, and booking coordination services.";
+                badgeText.textContent = "Scope: Platform & Messaging Users";
+                contactNum.textContent = "10";
+            } else {
+                // Documents swap
+                privacyDoc.classList.add('hidden');
+                termsDoc.classList.remove('hidden');
+                
+                // Toggle Button Styling
+                termsBtn.className = "px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-1.5 bg-white dark:bg-slate-800 text-brand-700 dark:text-white shadow-sm";
+                privacyBtn.className = "px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-1.5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white";
+
+                // Hero swap
+                heroTitle.textContent = "Terms & Conditions";
+                heroDesc.textContent = "Read our standard service regulations, messaging codes of conduct, system permissions, and business guidelines governing RecoveryAI.";
+                badgeText.textContent = "Scope: Customer Agreements & Rules";
+                contactNum.textContent = "8";
+            }
+
+            // Rebuild TOC and restart observers
+            buildTOC();
+            setupScrollSpy();
+            lucide.createIcons();
+            
+            // Scroll to the active top cleanly
+            window.scrollTo({top: 0, behavior: 'instant'});
+        }
+
+        // Active Search Implementation
         const searchInput = document.getElementById('policy-search');
         const clearBtn = document.getElementById('search-clear');
 
@@ -684,14 +822,16 @@
                 clearBtn.classList.add('hidden');
             }
 
-            // Loop and analyze search scores
-            sectionsList.forEach(sec => {
+            const currentList = currentTab === 'privacy' ? privacyTOC : termsTOC;
+
+            currentList.forEach(sec => {
                 const element = document.getElementById(sec.id);
+                if (!element) return;
+                
                 const textContent = (sec.title + " " + sec.text).toLowerCase();
                 
                 if (textContent.includes(query)) {
                     element.classList.remove('opacity-25', 'grayscale', 'pointer-events-none');
-                    // Highlight match in navigation matching ID
                     const navLink = document.querySelector(`[href="#${sec.id}"]`);
                     if (navLink) navLink.classList.remove('opacity-40');
                 } else {
@@ -705,16 +845,20 @@
         clearBtn.addEventListener('click', () => {
             searchInput.value = '';
             clearBtn.classList.add('hidden');
-            // reset sections
-            sectionsList.forEach(sec => {
+            const currentList = currentTab === 'privacy' ? privacyTOC : termsTOC;
+            currentList.forEach(sec => {
                 const element = document.getElementById(sec.id);
-                element.classList.remove('opacity-25', 'grayscale', 'pointer-events-none');
+                if (element) {
+                    element.classList.remove('opacity-25', 'grayscale', 'pointer-events-none');
+                }
                 const navLink = document.querySelector(`[href="#${sec.id}"]`);
-                if (navLink) navLink.classList.remove('opacity-40');
+                if (navLink) {
+                    navLink.classList.remove('opacity-40');
+                }
             });
         });
 
-        // Copy to clipboard utility (Using standard execution fallback for IFrame security compatibility)
+        // Copy to clipboard utility (Using execution fallback for iframe constraints)
         function copyEmail() {
             const el = document.createElement('textarea');
             el.value = 'getrecoveryai@gmail.com';
@@ -725,7 +869,7 @@
             showToast('Email address copied to clipboard!');
         }
 
-        // Custom Dynamic Toast Alerts (Safer/Polite substitute for standard Alert blocks)
+        // Custom Notification Substitute for standard window alerts
         function showToast(message) {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
@@ -737,12 +881,10 @@
             container.appendChild(toast);
             lucide.createIcons();
 
-            // Animate In
             setTimeout(() => {
                 toast.classList.remove('translate-y-5', 'opacity-0');
             }, 10);
 
-            // Out Trigger
             setTimeout(() => {
                 toast.classList.add('translate-y-5', 'opacity-0');
                 setTimeout(() => {
@@ -759,11 +901,10 @@
             }
         }
 
-        // Dark/Light Theme Switching logic
+        // Dark/Light Theme Switch
         const themeBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
 
-        // Check Local Storage or OS Theme
         if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             updateThemeIcon('dark');
@@ -793,16 +934,20 @@
             lucide.createIcons();
         }
 
-        // Scroll Spy Highlight Logic for TOC navigation
-        window.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver(entries => {
+        // Scroll Spy Intersection Observers
+        let globalObserver = null;
+        function setupScrollSpy() {
+            if (globalObserver) {
+                globalObserver.disconnect();
+            }
+
+            globalObserver = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     const id = entry.target.getAttribute('id');
                     const link = document.querySelector(`.toc-link[href="#${id}"]`);
                     if (!link) return;
 
                     if (entry.intersectionRatio > 0) {
-                        // Highlight active TOC link
                         document.querySelectorAll('.toc-link').forEach(node => {
                             node.classList.remove('text-brand-600', 'dark:text-brand-500', 'bg-brand-50/50', 'dark:bg-brand-950/50');
                             node.classList.add('text-slate-600', 'dark:text-slate-400');
@@ -811,12 +956,21 @@
                         link.classList.remove('text-slate-600', 'dark:text-slate-400');
                     }
                 });
-            }, { rootMargin: '-10% 0px -80% 0px' });
+            }, { rootMargin: '-10% 0px -75% 0px' });
 
-            // Track sections
-            document.querySelectorAll('section[id]').forEach(section => {
-                observer.observe(section);
+            const currentList = currentTab === 'privacy' ? privacyTOC : termsTOC;
+            currentList.forEach(item => {
+                const targetSec = document.getElementById(item.id);
+                if (targetSec) {
+                    globalObserver.observe(targetSec);
+                }
             });
+        }
+
+        // Initialize Center view
+        window.addEventListener('DOMContentLoaded', () => {
+            buildTOC();
+            setupScrollSpy();
         });
     </script>
 </body>
